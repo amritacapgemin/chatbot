@@ -129,6 +129,7 @@ app.post('/employees', (req, res) => {
    slack.send({
         channel: '#general',
         text:  'Leave for ' +req.body.empname +' ('+ req.body.emp_id +') is created successfully with start date ' +start_date, 
+		 icon_emoji: "https://upload.wikimedia.org/wikipedia/commons/7/79/Face-smile.svg",
         username: "Amrita"
     }); 
 });
@@ -143,7 +144,7 @@ app.post('/employees', (req, res) => {
       slack.send({
         channel: '#general',
         text: 'Leave for ' +req.body.empname +' with start date '+req.body.l_start_date+' is updated successfully with status Apporved',
-		 icon_emoji: "img/download.png",
+		
         //username: req.body.empname
     }); 
 })
