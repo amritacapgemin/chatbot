@@ -108,7 +108,8 @@ app.post('/employees', (req, res) => {
     })
    slack.send({
         channel: '#general',
-        text:  'Leave for ' +req.body.empname +' ('+ req.body.emp_id +') is created successfully with start date ' +start_date, 
+        text:  'Leave for ' +req.body.empname +' ('+ req.body.emp_id +') is created successfully with start date ' +start_date,
+       icon_emoji: "https://upload.wikimedia.org/wikipedia/commons/7/79/Face-smile.svg",		
         username: "Amrita"
     }); 
 });
