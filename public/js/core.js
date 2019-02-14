@@ -29,7 +29,7 @@ $(document).ready(function () {
 	//to get employee list from data base for manager access
 
 	$.ajax({
-		url: "https://agile-escarpment-27977.herokuapp.com/getemployees"
+		url: "https://infinite-hamlet-85455.herokuapp.com/getemployees"
 	}).then(function (data) {
 		$('#loadingmessage').show();
 		$.each(data, function (i, l) { 
