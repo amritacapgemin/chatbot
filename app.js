@@ -82,32 +82,12 @@ app.get('/getemployees', (req, res) => {
     });
 });
 /**function to chnage date format in dd/mm/yyyy format */
-	function getdate () {
-		now = new Date();
-		year = "" + now.getFullYear();
-		month = "" + (now.getMonth() +1); 
-		if (month.length ==1) { 
-			month = "0" + month; }	
-				day = "" + now.getDate();
-		
-		if (day.length == 1) { 
-				day = "0" + day; }
-				hour = "" + now.getHours();
-		if (hour.length ==1) { 
-				hour = "0" + hour; }
-				minute = "" + now.getMinutes();
-		if (minute.length ==1) { 
-			minute = "0" + minute; }
-			second = "" + now.getSeconds();
-		if (second.length ==1) { 
-			second = "0" + second; }
-
-	return 
-		day + "-" + month + "-" + year + " " + hour + ":" + minute + ":" + second;
-
+function date(datestring){
+    var getdate = datestring.split('-');
+    var month = parseInt(getdate[1], 10);
+    var newdate =  getdate[2] + '/' + month + '/' + getdate[0];
+    return newdate;
 }
-var currentTime = getdate();
-
 
 /** insert employee leave details into emp_leave collection */
 app.post('/employees', (req, res) => {
@@ -129,7 +109,6 @@ app.post('/employees', (req, res) => {
    slack.send({
         channel: '#general',
         text:  'Leave for ' +req.body.empname +' ('+ req.body.emp_id +') is created successfully with start date ' +start_date, 
-		 
         username: "Amrita"
     }); 
 });
@@ -144,7 +123,6 @@ app.post('/employees', (req, res) => {
       slack.send({
         channel: '#general',
         text: 'Leave for ' +req.body.empname +' with start date '+req.body.l_start_date+' is updated successfully with status Apporved',
-		
         //username: req.body.empname
     }); 
 })

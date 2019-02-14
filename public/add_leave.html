@@ -196,7 +196,6 @@
               <div>
                 <input class="btn btn-primary btn-block cancel" type="button" id="configreset" value="Cancel" />
 
-
               </div>
             </div>
           </div>
@@ -273,6 +272,7 @@
         } else {
           $.ajax({
             url: 'https://infinite-hamlet-85455.herokuapp.com/employees',
+			//url: 'http://localhost:3000/public/employees',
             async: true,
             dataType: 'json',
             type: 'POST',
