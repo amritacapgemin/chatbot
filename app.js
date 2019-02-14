@@ -123,6 +123,7 @@ app.post('/employees', (req, res) => {
       slack.send({
         channel: '#general',
         text: 'Leave for ' +req.body.empname +' with start date '+req.body.l_start_date+' is updated successfully with status Apporved',
+		 icon_emoji: "img/download.png",
         //username: req.body.empname
     }); 
 })
