@@ -107,9 +107,8 @@ app.post('/employees', (req, res) => {
         message: "record Inserted"
     })
    slack.send({
-        channel: '#general',
-        text:  'Leave for ' +req.body.empname +' ('+ req.body.emp_id +') is created successfully with start date ' +start_date,
-       icon_emoji: "https://upload.wikimedia.org/wikipedia/commons/7/79/Face-smile.svg",		
+        channel: '#notifications',
+        text:  'Leave for ' +req.body.empname +' ('+ req.body.emp_id +') is created successfully with start date ' +start_date,		
         username: "Amrita"
     }); 
 });
@@ -122,7 +121,7 @@ app.post('/employees', (req, res) => {
         console.log("1 document updated");
     });
       slack.send({
-        channel: '#general',
+        channel: '#notifications',
         text: 'Leave for ' +req.body.empname +' with start date '+req.body.l_start_date+' is updated successfully with status Apporved',
         //username: req.body.empname
     }); 
