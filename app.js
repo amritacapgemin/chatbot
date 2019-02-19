@@ -7,7 +7,7 @@ app.use(bodyParser.json());
 var mongoose = require('mongoose');
 var leaveModel = require('./employee.model');
 
-var MY_SLACK_WEBHOOK_URL = "https://hooks.slack.com/services/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";
+var MY_SLACK_WEBHOOK_URL = "https://hooks.slack.com/services/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";
 var slack = require('slack-notify')(MY_SLACK_WEBHOOK_URL);
 
 app.use('/public', express.static(__dirname + "/public"));
