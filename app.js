@@ -51,7 +51,7 @@ var currentTime = getsystemdate();
 
 /** start connection  from servicenow*/
 const sn = require('servicenow-rest-api');
-const ServiceNow = new sn('dev36339', 'admin', '10Service@321');
+const ServiceNow = new sn('dev49606', 'admin', '10Service@321');
 /** end connection  from servicenow*/
 
 /**set port using env variable */
