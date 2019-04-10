@@ -7,7 +7,7 @@ app.use(bodyParser.json());
 var mongoose = require('mongoose');
 var leaveModel = require('./employee.model');
 
-var MY_SLACK_WEBHOOK_URL = "https://hooks.slack.com/services/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";
+var MY_SLACK_WEBHOOK_URL = "https://hooks.slack.com/services/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";
 var slack = require('slack-notify')(MY_SLACK_WEBHOOK_URL);
 
 app.use('/public', express.static(__dirname + "/public"));
@@ -104,7 +104,7 @@ app.post('/employees', (req, res) => {
     emp.cur_date = currentTime;
     emp.save(); 
     res.json({            
-        message: "record Inserted"
+        message: "record Ins`erted"
     })
    slack.send({
         channel: '#notifications',
@@ -262,7 +262,7 @@ app.post('/chatbot', (req, response) => {
             leaveModel.remove(myquery, function (err, obj) {
                 if (err) throw err;
                 console.log(" document(s) deleted");
-                response.send(JSON.stringify({ "fulfillmentText": "Delete successfully for Id" + req.body.queryResult.parameters.leaveid }));
+                response.send(JSON.stringify({ "fulfillmentText": "Deleted record successfully for Id " + req.body.queryResult.parameters.leaveid }));
             });
             break;
     }
