@@ -13,7 +13,7 @@ var slack = require('slack-notify')(MY_SLACK_WEBHOOK_URL);
 app.use('/public', express.static(__dirname + "/public"));
 app.get('/', function (req, res) {
     res.set({
-        'Access-Control-Allow-Origin': '*'
+        'Access-Control-Allow-Origin': '*' 
     });
     return res.redirect('public/login.html')
 });
